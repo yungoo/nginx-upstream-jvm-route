@@ -20,3 +20,6 @@ V=1.6.0 \
 --add-module=../nginx-upstream-jvm-route-master \
 --with-cc-opt='-O2 -g' \
 && make && make install
+
+[ -f /usr/sbin/nginx ] && mv /usr/sbin/nginx{,.backup}
+ln -sfT /usr/local/nginx/sbin/nginx /usr/sbin/nginx
